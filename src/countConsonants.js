@@ -1,9 +1,7 @@
 function countConsonants(str = '') {
 
-  
-  str = str.replace(/[aeiou]/gi, '')
-
-  return str.length;
+  if (typeof str !== 'string') throw new Error('Invalid argument');
+  return str.replace(/[^a-z]/gi, '').replace(/[aeiou]/gi, '').length;
 }
 
 module.exports = countConsonants;
